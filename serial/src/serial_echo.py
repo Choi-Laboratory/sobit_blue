@@ -3,7 +3,7 @@ import serial
 import time
  
 ser=serial.Serial(
-    port = '/dev/ttyUSB0',
+    port = '/dev/vsrc',
     baudrate = 115200,
     parity = serial.PARITY_NONE,
     bytesize = serial.EIGHTBITS,

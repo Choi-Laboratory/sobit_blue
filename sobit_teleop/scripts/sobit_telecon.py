@@ -23,7 +23,7 @@ ser=serial.Serial(
 L_motion_deg = 0
 R_motion_deg = 0
 
-####初期設定####################################################################################################
+####初期設定################################################################################################
 def first_set():
 		print "[First_set]"
 
@@ -62,8 +62,8 @@ def cul_wheel(vel,ang):
 	print "ang:",+ang 	#ang:角速度[rad/s]
 	print "time:",+time 	#time:単位時間[s]
 
-	motion_in = vel
-	motion_ang = (ang * 180 /math.pi) * 0.35
+	motion_in = vel * 10 #translate 'm' to 'cm' 
+	motion_ang = (ang * 180 /math.pi) * 0.35 #0.35は回転1度あたりの定数（要調整）
 	print "motion_in:",+motion_in
 	  
 	#モーションの計算
@@ -119,12 +119,12 @@ def callback(cmd_vel):
 
 
 
-####メイン関数########################################################################################################
+####メイン関数###############################################################################################
 if __name__ == '__main__':
 	#初期設定			
 	first_set()
 
-	print "If you want to end this program, push 'q' key!"
+	print "If you want to end this program, push 'ctrlC' and next 'q' key!"
 
 	while True:
 
