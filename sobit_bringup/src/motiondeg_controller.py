@@ -183,13 +183,13 @@ if __name__ == '__main__':
 			#処理ループ
 			while True:
 				#エンコーダの読み込み
-				#get_enc()
+				get_enc()
 
 				rospy.sleep(1)
 
 				#モーション送受信
-				rospy.init_node('dobit_controller', anonymous=True)
-				sub = rospy.Subscriber('/motion_deg', Motion_deg, callback)
+				#rospy.init_node('text_controller', anonymous=True)
+				#sub = rospy.Subscriber('/motion_deg', Motion_deg, callback)
 
 				rospy.spin()
 	

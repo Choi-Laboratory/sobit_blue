@@ -5,11 +5,11 @@ import serial
 import rospy
 import roslib.packages
 from sensor_msgs.msg import *
-from sobit_model.msg import Motion_deg
+from sobit_description.msg import Motion_deg
 
 
 file_path = roslib.packages.get_pkg_dir('sobit_description') + "/motion/"
-file = open( file_path + 'touth.txt','r')
+file = open( file_path + 'init.txt','r')
 string = file.readlines()
 
 print(string)

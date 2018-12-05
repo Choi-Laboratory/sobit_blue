@@ -9,20 +9,20 @@
         <color rgba="0.1 0.1 0.1 1.0"/>
       </material>
 
-  <!--link ####################################################################-->
+	<!--link ####################################################################-->
 
   <!--base_frame link-->
   <link name="base_frame">
 	<collision>
 		<origin rpy="0 0 0" xyz="0 0 0.06"/>
 		<geometry>
-        	<mesh filename="package://sobit_description/mesh/SOBIT_MainFrame v1.stl"/>
+        	<mesh filename="package://sobit_description/mesh/stl/SOBIT_MainFrame v1.stl"/>
       	</geometry>
 	</collision>
 
     <visual>
     	<geometry>
-        	<mesh filename="package://sobit_description/mesh/SOBIT_MainFrame v1.stl"/>
+        	<mesh filename="package://sobit_description/mesh/stl/SOBIT_MainFrame v1.stl"/>
     	</geometry>
     	<origin rpy="0 0 0" xyz="0 0 0.06"/>
     	<material name="black2">
@@ -34,7 +34,7 @@
   <link name="left_wheel">
     <visual>
       <geometry>
-        <mesh filename="package://sobit_description/mesh/wheel.stl"/>
+        <mesh filename="package://sobit_description/mesh/dae/wheel.dae"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <material name="black">
@@ -46,7 +46,7 @@
   <link name="right_wheel">
     <visual>
       <geometry>
-        <mesh filename="package://sobit_description/mesh/wheel.stl"/>
+        <mesh filename="package://sobit_description/mesh/dae/wheel.dae"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <material name="black">
@@ -58,7 +58,7 @@
   <link name="right_shoulder">
     <visual>
       <geometry>
-        <mesh filename="package://sobit_description/mesh/SOBIT_shoulder v1.stl"/>
+        <mesh filename="package://sobit_description/mesh/stl/SOBIT_shoulder v1.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <material name="black">
@@ -70,7 +70,7 @@
   <link name="left_shoulder">
     <visual>
       <geometry>
-        <mesh filename="package://sobit_description/mesh/SOBIT_shoulder v1.stl"/>
+        <mesh filename="package://sobit_description/mesh/stl/SOBIT_shoulder v1.stl"/>
       </geometry>
       <origin rpy="0 0 3.14" xyz="0 0 0"/>
       <material name="black">
@@ -82,7 +82,7 @@
   <link name="right_first_arm">
     <visual>
       <geometry>
-        <mesh filename="package://sobit_description/mesh/first_arm.stl"/>
+        <mesh filename="package://sobit_description/mesh/stl/first_arm.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 -0.17"/>
       <material name="black">
@@ -94,7 +94,7 @@
   <link name="left_first_arm">
     <visual>
       <geometry>
-        <mesh filename="package://sobit_description/mesh/first_arm.stl"/>
+        <mesh filename="package://sobit_description/mesh/stl/first_arm.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 -0.17"/>
       <material name="black">
@@ -106,7 +106,7 @@
   <link name="right_elbow">
     <visual>
       <geometry>
-        <mesh filename="package://sobit_description/mesh/SOBIT_elbow v2.stl"/>
+        <mesh filename="package://sobit_description/mesh/stl/SOBIT_elbow v2.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <material name="black">
@@ -118,7 +118,7 @@
   <link name="left_elbow">
     <visual>
       <geometry>
-        <mesh filename="package://sobit_description/mesh/SOBIT_elbow v2.stl"/>
+        <mesh filename="package://sobit_description/mesh/stl/SOBIT_elbow v2.stl"/>
       </geometry>
       <origin rpy="0 0 3.14" xyz="0 0 0"/>
       <material name="black">
@@ -130,7 +130,7 @@
   <link name="right_second_arm">
     <visual>
       <geometry>
-        <mesh filename="package://sobit_description/mesh/SOBIT_second_arm v2.stl"/>
+        <mesh filename="package://sobit_description/mesh/stl/SOBIT_second_arm v2.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <material name="black">
@@ -142,7 +142,7 @@
   <link name="left_second_arm">
     <visual>
       <geometry>
-        <mesh filename="package://sobit_description/mesh/SOBIT_second_arm v2.stl"/>
+        <mesh filename="package://sobit_description/mesh/stl/SOBIT_second_arm v2.stl"/>
       </geometry>
       <origin rpy="0 0 3.14" xyz="0 0 0"/>
       <material name="black">
@@ -155,7 +155,7 @@
   <link name="neck">
     <visual>
       <geometry>
-        <mesh filename="package://sobit_description/mesh/SOBIT_neck.stl"/>
+        <mesh filename="package://sobit_description/mesh/stl/SOBIT_neck.stl"/>
       </geometry>
       <origin rpy="0 0 1.517" xyz="0 0 0"/>
       <material name="black">
@@ -167,7 +167,7 @@
   <link name="chin">
     <visual>
       <geometry>
-        <mesh filename="package://sobit_description/mesh/SOBIT_chin.stl"/>
+        <mesh filename="package://sobit_description/mesh/stl/SOBIT_chin.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <material name="black">
@@ -179,7 +179,7 @@
   <link name="head">
     <visual>
       <geometry>
-        <mesh filename="package://sobit_description/mesh/SOBIT_head.stl"/>
+        <mesh filename="package://sobit_description/mesh/stl/SOBIT_head.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <material name="black">
@@ -192,7 +192,7 @@
   <link name="left_hand">
     <visual>
       <geometry>
-        <mesh filename="package://sobit_description/mesh/SOBIT_hand.stl"/>
+        <mesh filename="package://sobit_description/mesh/stl/SOBIT_hand.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <material name="black">
@@ -204,7 +204,7 @@
   <link name="left_hand_thumb">
     <visual>
       <geometry>
-        <mesh filename="package://sobit_description/mesh/SOBIT_thumb.stl"/>
+        <mesh filename="package://sobit_description/mesh/stl/SOBIT_thumb.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <material name="black">
@@ -216,7 +216,7 @@
   <link name="left_hand_index">
     <visual>
       <geometry>
-        <mesh filename="package://sobit_description/mesh/SOBIT_index.stl"/>
+        <mesh filename="package://sobit_description/mesh/stl/SOBIT_index.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <material name="black">
@@ -228,7 +228,7 @@
   <link name="left_hand_middle">
     <visual>
       <geometry>
-         <mesh filename="package://sobit_description/mesh/SOBIT_index.stl" scale="1 1 1.0588"/>
+         <mesh filename="package://sobit_description/mesh/stl/SOBIT_index.stl" scale="1 1 1.0588"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <material name="black">
@@ -240,7 +240,7 @@
   <link name="left_hand_ring">
     <visual>
       <geometry>
-         <mesh filename="package://sobit_description/mesh/SOBIT_index.stl" scale="1 1 1"/>
+         <mesh filename="package://sobit_description/mesh/stl/SOBIT_index.stl" scale="1 1 1"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <material name="black">
@@ -252,7 +252,7 @@
   <link name="left_hand_pinky">
     <visual>
       <geometry>
-         <mesh filename="package://sobit_description/mesh/SOBIT_index.stl" scale="1 1 0.88"/>
+         <mesh filename="package://sobit_description/mesh/stl/SOBIT_index.stl" scale="1 1 0.88"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <material name="black">
@@ -265,7 +265,7 @@
   <link name="right_hand">
     <visual>
       <geometry>
-        <mesh filename="package://sobit_description/mesh/SOBIT_hand_right.stl"/>
+        <mesh filename="package://sobit_description/mesh/stl/SOBIT_hand_right.stl"/>
       </geometry>
       <origin rpy="0 0 3.14" xyz="0 0 0"/>
       <material name="black">
@@ -277,7 +277,7 @@
   <link name="right_hand_thumb">
     <visual>
       <geometry>
-        <mesh filename="package://sobit_description/mesh/SOBIT_thumb_right.stl"/>
+        <mesh filename="package://sobit_description/mesh/stl/SOBIT_thumb_right.stl"/>
       </geometry>
       <origin rpy="0 3.14 0" xyz="0 0 0"/>
       <material name="black">

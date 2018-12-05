@@ -1,4 +1,4 @@
-<!--display.launch-->
+<!--Robovie_maker.launch-->
 
 <launch>
     <arg name="model" default="$(find sobit_description)/robots/sobit.urdf"/>/>
@@ -8,4 +8,7 @@
     <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
     <node name="rviz" pkg="rviz" type="rviz" args="-d urdf2.rviz"/>
+
+	 <node name="robovie_maker" pkg="sobit_description" type="Robovie_maker.py" output="screen" launch-prefix="gnome-terminal -e" />
+	 <node name="save_motion" pkg="sobit_description" type="save_motion.py" output="screen" launch-prefix="gnome-terminal -e" />
 </launch>

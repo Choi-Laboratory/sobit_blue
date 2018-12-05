@@ -2,20 +2,18 @@ HOW TO USE sobit_description
 
 # launch
 1. display.launch
-		rvizを起動。ソビットのURDFモデルを表示させる。
+		rvizを起動　ソビットのURDFモデルを表示させる
+
 2. lidar.launch
-		lidarセンサを起動。sensor_scanが出力されるようになる。
+		lidarセンサを起動　sensor_scanが出力されるようになる
 
-# Robovie-Maker
-ソビットのOC用モーションを作成する
-1. roslaunch sobit_description display.launch
-		launch rviz and joint_state_publisher
-2. ./sobit_description/src/Robovie_maker.py
-		joint_state_publisher send motion for sobit
-3. ./sobit_descrooption/src/save_motion
-		save pose of sobit now amd set motion_time for motion
+3. robovie_maker.launch
+		'rviz' + 'robovie_maker.py' + 'save_motion'を起動
+		「joint state publisher」のスライダーを動かすことででSOBITを動かすことができる
+		モーションの保存は「SAVEMOTION」で行う→motionに保存される
+		
 
-# sobit_controller
+# text_controller
 publishされたmotion_degをシリアル通信に変換し、送信する
 1. ./sobit_description/sobit_controller
 

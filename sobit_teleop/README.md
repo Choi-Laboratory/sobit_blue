@@ -2,4 +2,7 @@ sobit_teleop
 ================
 
 Sobit Teleoperation implementation. 
-This package used to be in sobit_apps repository. 
+
+#how to launch
+$ roslaunch sobit_teleop keyboard_teleop.launch
+

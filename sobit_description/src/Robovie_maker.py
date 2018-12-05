@@ -3,11 +3,12 @@
 
 import serial
 import rospy
+import readchar
 from sensor_msgs.msg import *
-from sobit_model.msg import Motion_deg
+from sobit_description.msg import Motion_deg
 
 ser=serial.Serial(
-  		port = '/dev/ttyUSB1',
+  		port = '/dev/vsrc',
    	baudrate = 115200,
  	 	parity = serial.PARITY_NONE, 
  	 	bytesize = serial.EIGHTBITS,
@@ -156,7 +157,7 @@ def callback(joint):
 #Jointstateの読み込み
 def joint_read():
 		print "Joint_read"
-		rospy.init_node('joint_state_publisher', anonymous=True)
+		rospy.init_node('RobovieMaker', anonymous=True)
 		sub = rospy.Subscriber('joint_states', JointState, callback)
 		rospy.spin()
 
@@ -186,25 +187,34 @@ def first_set():
 			rospy.sleep(1)
 
 
-
 ###############################################################################################################
 #メイン関数
 if __name__ == '__main__':
-			#初期設定			
-			first_set()
+		print "how to exit proglam push 'ctrlC' and next 'q' key"
+		
+		#初期設定			
+		first_set()
 	
+		while True:	
 			#Jointstateの読み込み
 			joint_read()
 
+			rospy.spin()
 
+			#キー入力(q)で終了
+			kb = readchar.readchar()
+			if kb == "q":
+				print("[exit program]")
+				print "<pose_init>"	
+				ser.write("@00c8:T8000:T8000:T8000:T0000:T8000:T8000:T8000:T8000:T8000:T8000:T8000:T8000:T8000::::::T8000:T8000:T6800:T9800:T6800:T9800:T8000:T8000:T9800:T6800:T9800:T6800\n")
+				print ser.readline(),
+				rospy.sleep(3)
 
-			print "<pose_init>"	
-			ser.write("@00c8:T8000:T8000:T8000:T0000:T8000:T8000:T8000:T8000:T8000:T8000:T8000:T8000:T8000::::::T8000:T8000:T6800:T9800:T6800:T9800:T8000:T8000:T9800:T6800:T9800:T6800\n")
-			print ser.readline(),
-			rospy.sleep(3)
+				print "<gain_off>"
+				ser.write("P0000\n")
+				print ser.readline(),
 
-			print "<gain_off>"
-			ser.write("P0000\n")
-			print ser.readline(),
+				break
+
 	
 

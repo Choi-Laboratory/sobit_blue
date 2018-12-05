@@ -1,0 +1,5 @@
+<!--sobit_motiondeg.launch-->
+
+<launch>
+<node pkg="sobit_bringup" type="motiondeg_controller.py" name="motiondeg_controller" output="screen"/>
+</launch>

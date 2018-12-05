@@ -6,9 +6,9 @@ import rospy
 import sys
 import roslib.packages
 from sensor_msgs.msg import *
-from sobit_model.msg import Motion_deg
+from sobit_description.msg import Motion_deg
 
-file_path = roslib.packages.get_pkg_dir('sobit_model') + "/motion/"
+file_path = roslib.packages.get_pkg_dir('sobit_description') + "/motion/"
 out_file_name = raw_input("output file's name >> ")
 out_file = open(file_path + out_file_name + '.txt', 'w')  #書き込みモードでオープン
 save_flag = False
@@ -32,8 +32,9 @@ def callback(motion_deg):
 
 
 if __name__ == '__main__':
-	
-	rospy.init_node('output_state', anonymous=True)
+	print "SAVE MOTION"
+
+	rospy.init_node('save_motion', anonymous=True)
 	sub = rospy.Subscriber('motion_deg', Motion_deg, callback)
 	
 	while True:

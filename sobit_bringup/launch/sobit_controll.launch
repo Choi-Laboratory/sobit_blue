@@ -1,0 +1,5 @@
+<!--sobit_controll.launch-->
+
+<launch>
+<node pkg="sobit_bringup" type="sobit_controller.py" name="sobit_controller" output="screen"/>
+</launch>

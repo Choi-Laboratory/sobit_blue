@@ -1,3 +1,5 @@
+<!--keyboard_teleop.launch-->
+
 <launch>
   <!-- turtlebot_teleop_key already has its own built in velocity smoother -->
 
@@ -7,6 +9,6 @@
     <remap from="sobit_teleop_keyboard/cmd_vel" to="cmd_vel_mux/input/teleop"/>
   </node>
 
-  <node pkg="sobit_teleop" type="sobit_telecon.py" name="sobit_telecon" output="screen" launch-prefix="gnome-terminal -e">
-  </node>
+  <!--<node pkg="sobit_teleop" type="sobit_telecon.py" name="sobit_telecon" output="screen" launch-prefix="gnome-terminal -e">
+  </node>-->
 </launch>
