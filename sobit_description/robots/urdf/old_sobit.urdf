@@ -2,7 +2,7 @@
 <robot name="sobit">
 
 <material name="black">
-        <color rgba="0.3 0.3 0.3 0.8"/>
+        <color rgba="0.3 0.3 0.3 0.9"/>
       </material>
 
 <material name="black2">
@@ -511,6 +511,27 @@
      <limit effort="1000" lower="-1.571" upper="0" velocity="0.5"/>
   </joint>
 
+
+  <!--body_cover link-->
+  <link name="body_cover">
+    <visual>
+      <geometry>
+        <mesh filename="package://sobit_description/mesh/stl/body.stl"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="black">
+      </material>
+    </visual>
+  </link>
+
+ <!-- body_cover -->
+  <!--body_cover joint-->
+  <joint name="lidar" type="fixed">
+    <parent link="base_frame"/>
+    <child link="body_cover"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint> 
+  
 
   <!-- lidar -->
   <!--lidar joint-->
