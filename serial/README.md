@@ -5,7 +5,7 @@ sobit_serial
 
 シリアル通信 to VSRC003
 
-<MOTION_SEND>
+MOTION_SEND
 	1：	モーションタイム	@0000(16進数4桁）
 		%04x(1ms/25)
 	2：	各関節ポジション	C0000(16進数4桁)	
