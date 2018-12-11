@@ -1,10 +1,9 @@
 # SOBIT_blue
-Ros package of SOBIT (Robovie R2)
+Ros package for SOBIT (Robovie R2)
 
-#　author 
+# author 
 Masaaki Yokomizo(soka univ 45th)
 ...
-
 
 # Robovie-Maker
 ソビットのOC用モーションを作成する

@@ -27,66 +27,32 @@ joint_name =  ["motion_time","L_wheel\t","R_wheel\t","L_shoulder_roll","L_should
 ###############################################################################################################
 def cul_motion(motion_deg):
 		motion=[0]*30
-
-		#<L_wheel>
-		motion[1] = '%x' %(32768 + motion_deg[0] * 44)
-
-		#<R_wheel>
-		motion[2] = '%x' %(32768 - motion_deg[1] * 44)
-
-		#<L_shoulder_roll>
-		motion[3] = '%x' %(32768 + motion_deg[2] * 97)
 		
-		#<L_shoulder_pitch>
-		#motion[4] = '%x' %(32768 + motion_deg[3] * 86)
-
-		#<L_elbow_yaw>
-		motion[5] = '%x' %(32768 + motion_deg[4] * 58)
+		motion[1] = '%x' %(32768 + motion_deg[0] * 44)		#<L_wheel>
+		motion[2] = '%x' %(32768 - motion_deg[1] * 44)		#<R_wheel>
 		
-		#<L_elbow_pitch>
-		motion[6] = '%x' %(32768 + motion_deg[5] * 105)
+		motion[3] = '%x' %(32768 + motion_deg[2] * 97)		#<L_shoulder_roll>
+		motion[4] = '%x' %(32768 + motion_deg[3] * 86)		#<L_shoulder_pitch>
+		motion[5] = '%x' %(32768 + motion_deg[4] * 58)		#<L_elbow_yaw>
+		motion[6] = '%x' %(32768 - motion_deg[5] * 105)		#<L_elbow_pitch>	
 
-		#<R_shoulder_roll>
-		motion[7] = '%x' %(32768 + motion_deg[6] * 97)
-
-		#<L_shoulder_pitch>
-		motion[8] = '%x' %(32768 + motion_deg[7] * 86)
-
-		#<L_elbow_yaw>
-		motion[9] = '%x' %(32768 - motion_deg[8] * 58)
+		motion[7] = '%x' %(32768 - motion_deg[6] * 97)		#<R_shoulder_roll>
+		motion[8] = '%x' %(32768 - motion_deg[7] * 86)		#<R_shoulder_pitch>
+		motion[9] = '%x' %(32768 - motion_deg[8] * 58)		#<R_elbow_yaw>	
+		motion[10] = '%x' %(32768 + motion_deg[9] * 105)	#<R_elbow_pitch>
 		
-		#<L_elbow_pitch>
-		motion[10] = '%x' %(32768 + motion_deg[9] * 105)
-
-		#<neck_pitch>
-		motion[11] = '%x' %(32768 + motion_deg[10] * 110)
+		motion[11] = '%x' %(32768 + motion_deg[10] * 110)	#<neck_pitch>
+		motion[12] = '%x' %(32768 + motion_deg[11] * 112)	#<neck_roll>	
+		motion[13] = '%x' %(32768 + motion_deg[12] * 246)	#<neck yaw>
+ 		
+		motion[14] = '%x' %(32768 - motion_deg[13] * 91)	#<L_hand_twist>
+		motion[15] = '%x' %(32768 - motion_deg[14] * 91)	#<L_hand_thumb>		
+		motion[16] = '%x' %(26624 - motion_deg[15] * 68)	#<L_hand_index>		
+		motion[17] = '%x' %(38912 + motion_deg[16] * 68)	#<L_hand_middle>		
+		motion[18] = '%x' %(26624 - motion_deg[17] * 68)	#<L_hand_ring>		
+		motion[19] = '%x' %(38912 + motion_deg[18] * 68)	#<L_hand_pinky>
 		
-		#<neck_roll>
-		motion[12] = '%x' %(32768 + motion_deg[11] * 112)
-
-		#<neck yaw>
-		motion[13] = '%x' %(32768 + motion_deg[12] * 246)
-
- 		#<L_hand_twist>
-		motion[14] = '%x' %(32768 - motion_deg[13] * 91)
-
-		#<L_hand_thumb>
-		motion[15] = '%x' %(32768 - motion_deg[14] * 91)
-
-		#<L_hand_index>
-		motion[16] = '%x' %(26624 - motion_deg[15] * 68)
-
-		#<L_hand_middle>
-		motion[17] = '%x' %(38912 + motion_deg[16] * 68)
-
-		#<L_hand_ring>
-		motion[18] = '%x' %(26624 - motion_deg[17] * 68)
-
-		#<L_hand_index>
-		motion[19] = '%x' %(38912 + motion_deg[18] * 68)
-
-		#<R_hand_twist>
-		motion[20] = '%x' %(32768 + motion_deg[19] * 91)
+		motion[20] = '%x' %(32768 + motion_deg[19] * 91)	#<R_hand_twist>
 
 		print "<CUL_MOTION>"
 		for i in range(0,21):

@@ -116,13 +116,6 @@ def cul_wheel(vel,ang):
 			return motion
 
 
-####cul_jointstate.velocity##############################################################################################
-#def cul_vel(position_enc):
-
-
-
-
-
 ####エンコーダ取得##############################################################################################################
 def get_enc():
 			global seq
@@ -159,7 +152,6 @@ def get_enc():
 			#time
 			now = rospy.get_rostime()
 			
-			#cul_vel()
 
 			#enc_jointstateの更新
 			enc_jointstate.header.seq = seq
@@ -177,11 +169,6 @@ def get_enc():
 
 
 ####callback########################################################################################################
-def callback2(joint_state):
-
-
-
-####callback########################################################################################################
 def callback(cmd_vel):
 			pub = rospy.Publisher('sobit_enc_joint', JointState , queue_size=10)	
 	
@@ -194,7 +181,6 @@ def callback(cmd_vel):
 			pub.publish(enc_jointstate_2)
 			rospy.sleep(0.05)	
 
-			sub = rospy.Subscriber('jointstate_publisher', JointState, callback2)
 
 			#0の時は何もしない
 			if cmd_vel.linear.x == 0 and cmd_vel.angular.z == 0:
@@ -212,7 +198,6 @@ def callback(cmd_vel):
 
 
 			return
-
 
 
 
