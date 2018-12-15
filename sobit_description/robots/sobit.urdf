@@ -126,7 +126,7 @@
     <child link="left_first_arm"/>
     <axis xyz="1 0 0"/>
     <origin rpy="0.0 0 0" xyz="0.00 0.075 0"/>
-     <limit effort="1000" lower="0" upper="3.14" velocity="0.5"/>
+     <limit effort="1000" lower="0" upper="3.14" velocity="0.1"/>
   </joint>
 
   <!--left_shoulder_pitch joint-->

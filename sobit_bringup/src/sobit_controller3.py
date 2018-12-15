@@ -262,6 +262,12 @@ def callback1(jointstate):
 			pub = rospy.Publisher('sobit_enc', JointState , queue_size=10)		
 
 			print "\n\n[CALL_BACK1]"
+			now = rospy.get_rostime()
+			test = now.nsecs - jointstate.header.stamp.nsecs 
+			print "test:",test 
+			if now.secs - jointstate.header.stamp.secs > 1:
+				return
+
 			#print jointstate
 
 			state_jointstate.position = jointstate.position
@@ -314,35 +320,31 @@ if __name__ == '__main__':
 			first_set()
 			rospy.init_node('sobit_controller')	
 			
-
 			print "\nIf you want to end this program, push 'ctrlC' and next 'q' key!"
 			
-			#処理ループ
-			while True:
-				print "\n[MAIN]"
 
-				#関節position指示の取得
-				sub = rospy.Subscriber('/joint_states', JointState, callback1)
+			#関節position指示の取得
+			sub = rospy.Subscriber('/joint_states', JointState, callback1)
 
-				#cmd_velの読み込み
-				sub = rospy.Subscriber('cmd_vel_mux/input/teleop', Twist, callback2)
+			#cmd_velの読み込み
+			sub = rospy.Subscriber('cmd_vel_mux/input/teleop', Twist, callback2)
 
-				rospy.spin()
-	
-				#キー入力(q)で終了
-				kb = readchar.readchar()
-				if kb == "q":
-						print("[exit program]")
-						print "<pose_init>"	
-						ser.write("@012c:T8000:T8000:T8000:T0000:T8000:T8000:T8000:T8000:T8000:T8000:T8000:T8000:T8000::::::T8000:T8000:T6800:T9800:T6800:T9800:T8000:T8000:T9800:T6800:T9800:T6800\n")
-						print ser.readline(),
-						rospy.sleep(3)
+			rospy.spin()	
 
-						print "<gain_off>"
-						ser.write("P0000\n")
-						print ser.readline(),
+			#キー入力(q)で終了
+			#kb = readchar.readchar()
+			#if kb == "q":
+			print("[exit program]")
+			print "<pose_init>"	
+			ser.write("@012c:T8000:T8000:T8000:T0000:T8000:T8000:T8000:T8000:T8000:T8000:T8000:T8000:T8000::::::T8000:T8000:T6800:T9800:T6800:T9800:T8000:T8000:T9800:T6800:T9800:T6800\n")
+			print ser.readline(),
+			rospy.sleep(3)
 
-						break
+			print "<gain_off>"
+			ser.write("P0000\n")
+			print ser.readline(),
+
+			
 
 
 

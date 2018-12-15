@@ -10,6 +10,6 @@
 		<node name="rviz" pkg="rviz" type="rviz" args="-d urdf2.rviz"/>
 
 
-		<node pkg="sobit_bringup" type="sobit_controller2.py" name="sobit_controller2" output="screen"/>
+		<node pkg="sobit_bringup" type="sobit_controller3.py" name="sobit_controller2" output="screen"/>
 </launch> 
 

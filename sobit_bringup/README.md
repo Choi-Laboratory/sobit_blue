@@ -13,4 +13,7 @@ sobit_bringup
 		SOBITの足回りの起動。
 		トピック「cmd_vel（Twist型）」をsubscribeして車輪を制御する。
 		エンコーダによる各関節のpositionを「sobit_enc(JointState型)でpublishする
-		
+
+4. sobit_minimal.launch
+		足回りと上半身の起動。
+		トピック「cmd_vel(Twist型)」による車輪制御とトピック「joint_state(JointState型)」による上半身関節の制御。		

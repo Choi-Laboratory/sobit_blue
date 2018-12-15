@@ -7,14 +7,14 @@ sobit_serial
 
 モーションの送信
 -----------------------
-1：	モーションタイム	@0000(16進数4桁）
+1.	モーションタイム	@0000(16進数4桁）
 	%04x(1ms/25)
 
-2：	各関節ポジション	C0000(16進数4桁)	
-	CH)	NAME)					安全な可動域:rad）		10進数化計算）
-	CH1	L_WHEEL				---						32768+(deg*44)
-	CH2	R_WHEEL				---						32768-(deg*44)
-	CH3	L_sholder_roll		上+3.14					32768+(deg*97)
+2.	各関節ポジション	C0000(16進数4桁)	
+	CH)	NAME)					安全な可動域:rad）		
+	CH1	L_WHEEL				---						
+	CH2	R_WHEEL				---						
+	CH3	L_sholder_roll		上+3.14					
 	CH4	L_shouler_pitch	前+3.14	後-1.57
 	CH5	L_elbow_yaw			外+1.57	内-3.14
 	CH6	R_elbow_pitch		上+3.14	下-0.30
