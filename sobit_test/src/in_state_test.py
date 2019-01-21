@@ -3,12 +3,19 @@
 
 import rospy
 import sys
+import time
+from numpy import *
 import roslib.packages
 from sensor_msgs.msg import *
 from geometry_msgs.msg import *
 
-file_path = roslib.packages.get_pkg_dir('sobit_test') + "/output/"
-in_file = open(file_path + 'in_state.txt', 'w')		#書き込みモードでオープン
+cnow = time.ctime()
+cnvtime = time.strptime(cnow)
+ex_time = time.strftime("%Y%m%d %H%M",cnvtime)
+
+file_path = roslib.packages.get_pkg_dir('sobit_test') + "/output/state/"
+in_file = open(file_path + 'in_state' + ex_time + '.txt', 'w')		#書き込みモードでオープン
+
 first_flag = True
 first_sec = 0
 

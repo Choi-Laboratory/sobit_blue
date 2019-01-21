@@ -32,10 +32,10 @@ time = 0.1	#送信モーションの単位時間ｓ（Default:0.1）
 seq = 0
 
 enc_jointstate = JointState()
-enc_jointstate.name =("L_wheel","R_wheel","L_shoulder_roll","L_shoulder_pitch","L_elbow_yaw","L_shoulder_pitch","R_shoulder_roll","R_shoulder_pitch","R_elbow_yaw","R_elbow_pitch","neck_pitch","neck_roll","neck_yaw","L_hand_twist","L_hand_thumb","L_hand_index","L_hand_mid","L_hand_ring","L_hand_pinky","R_hand_twist")
+enc_jointstate.name =["L_wheel","R_wheel","L_shoulder_roll","L_shoulder_pitch","L_elbow_yaw","L_shoulder_pitch","R_shoulder_roll","R_shoulder_pitch","R_elbow_yaw","R_elbow_pitch","neck_pitch","neck_roll","neck_yaw","L_hand_twist","L_hand_thumb","L_hand_index","L_hand_mid","L_hand_ring","L_hand_pinky","R_hand_twist"]
 
 state_jointstate = JointState()
-state_jointstate.name =("L_wheel","R_wheel","L_shoulder_roll","L_shoulder_pitch","L_elbow_yaw","L_shoulder_pitch","R_shoulder_roll","R_shoulder_pitch","R_elbow_yaw","R_elbow_pitch","neck_pitch","neck_roll","neck_yaw","L_hand_twist","L_hand_thumb","L_hand_index","L_hand_mid","L_hand_ring","L_hand_pinky","R_hand_twist")
+state_jointstate.name =["L_wheel","R_wheel","L_shoulder_roll","L_shoulder_pitch","L_elbow_yaw","L_shoulder_pitch","R_shoulder_roll","R_shoulder_pitch","R_elbow_yaw","R_elbow_pitch","neck_pitch","neck_roll","neck_yaw","L_hand_twist","L_hand_thumb","L_hand_index","L_hand_mid","L_hand_ring","L_hand_pinky","R_hand_twist"]
 
 ####初期設定#########################################################################################################
 def first_set():
@@ -79,9 +79,9 @@ def cul_motion(vel,ang,position):
 			#print "vel:",+vel 	#vel:速度[m/s]
 			#print "ang:",+ang 	#ang:角速度[rad/s]
 			#print "time:",+time 	#time:単位時間[s]
-			print "position:"
-			print position
-			print position[3]
+			#print "position:"
+			#print position
+			#print position[3]
 
 			###CUL_WHEEL############################################################################
 			vel = vel * 100 #translate 'm' to 'cm' 
@@ -131,8 +131,8 @@ def cul_motion(vel,ang,position):
 			#10→16進
 			motion[0] = '%04x' %(time * 40)
 			
-			motion[1] = '%04x' %(32768 + L_motion_cm * 44)		#<L_wheel>
-			motion[2] = '%04x' %(32768 - R_motion_cm * 44)		#<R_wheel>
+			motion[1] = '%04x' %(32768 + L_motion_cm * 60)		#<L_wheel>
+			motion[2] = '%04x' %(32768 - R_motion_cm * 60)		#<R_wheel>
 		
 			motion[3] = '%04x' %(32768 + motion_deg[2] * 97)		#<L_shoulder_roll>
 			motion[4] = '%04x' %(32768 + motion_deg[3] * 86)		#<L_shoulder_pitch>
@@ -324,10 +324,10 @@ if __name__ == '__main__':
 			
 
 			#関節position指示の取得
-			sub = rospy.Subscriber('/joint_states', JointState, callback1)
+			sub = rospy.Subscriber('sobit/joint_states', JointState, callback1)
 
 			#cmd_velの読み込み
-			sub = rospy.Subscriber('cmd_vel_mux/input/teleop', Twist, callback2)
+			sub = rospy.Subscriber('sobit/cmd_vel', Twist, callback2)
 
 			rospy.spin()	
 

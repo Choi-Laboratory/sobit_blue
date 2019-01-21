@@ -9,7 +9,9 @@
 		<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
 		<node name="rviz" pkg="rviz" type="rviz" args="-d urdf2.rviz"/>
 
-
-		<node pkg="sobit_bringup" type="sobit_controller3.py" name="sobit_controller2" output="screen"/>
+		<node pkg="sobit_bringup" type="joint_smoother.py" name="smoother"/>
+		<node pkg="sobit_bringup" type="sobit_controller6.py" name="sobit_controller" output="screen"/>
+		<node pkg="sobit_bringup" type="joint_state_listner.py" name="joint_controller" />
+		<node pkg="sobit_bringup" type="cmd_vel_listner.py" name="cmdvel_controller" />
 </launch> 
 

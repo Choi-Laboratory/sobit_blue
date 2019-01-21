@@ -6,9 +6,6 @@
   <node pkg="sobit_teleop" type="sobit_teleop_key" name="sobit_teleop_keyboard" output="screen">
     <param name="scale_linear" value="0.5" type="double"/>
     <param name="scale_angular" value="1.5" type="double"/>
-    <remap from="sobit_teleop_keyboard/cmd_vel" to="cmd_vel_mux/input/teleop"/>
+    <remap from="sobit_teleop_keyboard/cmd_vel" to="sobit/cmd_vel"/>
   </node>
-
-  <!--<node pkg="sobit_teleop" type="sobit_telecon.py" name="sobit_telecon" output="screen" launch-prefix="gnome-terminal -e">
-  </node>-->
 </launch>

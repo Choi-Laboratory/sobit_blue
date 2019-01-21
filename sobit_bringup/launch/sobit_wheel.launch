@@ -1,5 +1,6 @@
 <!--sobit_minimal.launch-->
 
 <launch>
-<node pkg="sobit_bringup" type="sobit_controller.py" name="sobit_controller" output="screen"/>
+<node pkg="sobit_bringup" type="sobit_controller6.py" name="sobit_controller" output="screen"/>
+<node pkg="sobit_bringup" type="cmd_vel_listner.py" name="cmdvel_controller" />
 </launch>

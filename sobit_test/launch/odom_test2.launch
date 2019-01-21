@@ -1,0 +1,9 @@
+<!--sobit_wheel.launch-->
+
+<launch>
+		<node pkg="sobit_bringup" type="sobit_controller6.py" name="sobit_controller" output="screen"/>
+		<node pkg="sobit_bringup" type="cmd_vel_listner.py" name="cmd_listner" />
+		
+		<node pkg="sobit_test" type="cmd_vel_test.py" name="cmd_vel_test" output="screen" launch-prefix="gnome-terminal -e" />
+		<node pkg="sobit_test" type="odom_test.py" name="odom_test" output="screen" launch-prefix="gnome-terminal -e"/>
+</launch> 
